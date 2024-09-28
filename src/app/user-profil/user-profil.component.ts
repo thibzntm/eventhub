@@ -1,6 +1,7 @@
 // user-profil.component.ts
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
+import { EventService } from '../shared/services/event.service'; // Import EventService
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,21 +12,53 @@ import { Router } from '@angular/router';
 export class UserProfilComponent implements OnInit {
   name: string = '';
   email: string = '';
-  originalEmail: string = ''; // Utilisé pour comparaison si nécessaire
+  favorites: any[] = [];
+  subscriptions: any[] = [];
   isEditEnabled: boolean = false; // Indique si le mode d'édition est activé
   errorMessage: string = ''; // Message d'erreur éventuel
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private eventService: EventService, private router: Router) {}
 
   ngOnInit(): void {
     const user = this.authService.getCurrentUser();
     if (user) {
       this.name = user.name;
       this.email = user.email;
-      this.originalEmail = user.email;
+      this.loadFavorites(user.favorites);
+      this.loadSubscriptions(user.mySubscriptions);
     } else {
       this.router.navigate(['/login']); // Redirige si l'utilisateur n'est pas connecté
     }
+  }
+
+  loadFavorites(favoriteIds: string[]): void {
+    if (favoriteIds && favoriteIds.length > 0) {
+      this.eventService.getEventsByIds(favoriteIds).subscribe(
+        (events) => {
+          this.favorites = events;
+        },
+        (error) => {
+          console.error('Error loading favorites', error);
+        }
+      );
+    }
+  }
+
+  loadSubscriptions(subscriptionIds: string[]): void {
+    if (subscriptionIds && subscriptionIds.length > 0) {
+      this.eventService.getEventsByIds(subscriptionIds).subscribe(
+        (events) => {
+          this.subscriptions = events;
+        },
+        (error) => {
+          console.error('Error loading subscriptions', error);
+        }
+      );
+    }
+  }
+
+  viewEventDetails(eventId: string): void {
+    this.router.navigate(['/event', eventId]);
   }
 
   enableEdit(): void {
@@ -35,12 +68,6 @@ export class UserProfilComponent implements OnInit {
   saveChanges(): void {
     if (!this.name || !this.email) {
       this.errorMessage = 'All fields are required';
-      return;
-    }
-
-    // Vérifie si les données ont été modifiées
-    if (this.email === this.originalEmail && this.name === this.authService.getCurrentUser().name) {
-      this.isEditEnabled = false;
       return;
     }
 
@@ -64,7 +91,6 @@ export class UserProfilComponent implements OnInit {
 
   cancelEdit(): void {
     this.isEditEnabled = false;
-    // Réinitialiser les valeurs du formulaire
     const user = this.authService.getCurrentUser();
     if (user) {
       this.name = user.name;

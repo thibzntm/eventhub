@@ -20,6 +20,16 @@
       "owner": "test",
       "maxPeople": 23,
       "counter": 0
+    },
+    {
+      "id": "75ce",
+      "title": "Paris ",
+      "date": "2024-09-25",
+      "location": "Paris",
+      "description": "Paris los angeles",
+      "owner": "pap",
+      "maxPeople": 1,
+      "counter": 0
     }
   ],
   "users": [
@@ -56,6 +66,14 @@
       "name": "ss",
       "email": "ss",
       "password": "ss",
+      "favorites": [],
+      "mySubscriptions": []
+    },
+    {
+      "id": "b924",
+      "name": "pap",
+      "email": "pap",
+      "password": "pap",
       "favorites": [],
       "mySubscriptions": []
     }

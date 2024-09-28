@@ -34,5 +34,27 @@
       <button type="button" (click)="saveChanges()" class="btn btn-save">Save Changes</button>
       <button type="button" (click)="cancelEdit()" class="btn btn-cancel">Cancel</button>
     </form>
+  
+    <h3>My Subscriptions</h3>
+    <div *ngIf="subscriptions.length > 0; else noSubscriptions">
+      <div *ngFor="let event of subscriptions" class="event-card" (click)="viewEventDetails(event.id)">
+        <h4>{{ event.title }}</h4>
+        <p>{{ event.date }} - {{ event.location }}</p>
+      </div>
+    </div>
+    <ng-template #noSubscriptions>
+      <p>You have no subscriptions.</p>
+    </ng-template>
+  
+    <h3>My Favorites</h3>
+    <div *ngIf="favorites.length > 0; else noFavorites">
+      <div *ngFor="let event of favorites" class="event-card" (click)="viewEventDetails(event.id)">
+        <h4>{{ event.title }}</h4>
+        <p>{{ event.date }} - {{ event.location }}</p>
+      </div>
+    </div>
+    <ng-template #noFavorites>
+      <p>You have no favorite events.</p>
+    </ng-template>
   </div>
   

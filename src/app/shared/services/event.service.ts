@@ -23,6 +23,11 @@ export class EventService {
     return this.http.get(`${this.apiUrl}?owner=${owner}`);
   }
 
+  getEventsByIds(ids: string[]): Observable<any[]> {
+    const query = ids.map(id => `id=${id}`).join('&');
+    return this.http.get<any[]>(`${this.apiUrl}?${query}`);
+  }
+
   createEvent(event: any): Observable<any> {
     return this.http.post(this.apiUrl, event);
   }
