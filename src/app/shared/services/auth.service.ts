@@ -43,7 +43,10 @@ export class AuthService {
     this.isLoggedIn.next(false);
     localStorage.removeItem('user');
   }
-
+  getCurrentUser() {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
+  }
   get isUserLoggedIn() {
     return this.isLoggedIn.asObservable();
   }

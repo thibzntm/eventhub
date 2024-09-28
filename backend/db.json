@@ -9,18 +9,19 @@
       "creatorId": 1
     },
     {
-      "id": "3cb9",
+      "id": "2594",
       "title": "test",
-      "date": "2024-09-04",
-      "location": "paris ",
-      "description": "fsdf"
+      "date": "2024-09-05",
+      "location": "test",
+      "description": "tes",
+      "owner": "test"
     },
     {
-      "id": "bd82",
-      "title": "Paris BB",
-      "date": "2024-09-12",
-      "location": "paris ",
-      "description": "VDsfdsf"
+      "id": "6250",
+      "title": "test",
+      "date": "2024-09-13",
+      "location": "test",
+      "description": "tes"
     }
   ],
   "users": [
