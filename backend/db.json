@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Conférence Angular",
+      "date": "2024-09-28",
+      "location": "Paris",
+      "description": "Une conférence dédiée à Angular.",
+      "creatorId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Thib",
+      "email": "thib@example.com",
+      "password": "password123"
+    }
+  ]
+}
