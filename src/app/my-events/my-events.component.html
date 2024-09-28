@@ -1,0 +1,19 @@
+<app-menu></app-menu> <!-- Composant de menu -->
+
+<div class="my-events-container">
+    <h2>My Events</h2>
+    <div *ngIf="events.length > 0; else noEvents">
+      <div *ngFor="let event of events" class="event-card">
+        <h3>{{ event.title }}</h3>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <p><strong>Participants:</strong> {{ event.counter }}/{{ event.maxPeople }}</p>
+        <button (click)="deleteEvent(event.id)" class="btn btn-delete">Delete</button>
+        <button [routerLink]="['/edit-event', event.id]" class="btn btn-edit">Edit</button>
+      </div>
+    </div>
+    <ng-template #noEvents>
+      <p>You have not created any events yet.</p>
+    </ng-template>
+  </div>
+  

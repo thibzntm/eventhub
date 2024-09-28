@@ -15,13 +15,19 @@ export class EventService {
     return this.http.get(this.apiUrl);
   }
 
-  // event.service.ts
-  getEventById(id: string): Observable<any> { // Changez `id: number` en `id: string`
+  getEventById(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
+  getEventsByOwner(owner: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}?owner=${owner}`); // Requête avec filtre par propriétaire
+  }
 
   createEvent(event: any): Observable<any> {
     return this.http.post(this.apiUrl, event);
+  }
+
+  deleteEvent(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

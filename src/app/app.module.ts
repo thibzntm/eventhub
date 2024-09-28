@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     RegisterComponent,
     UserProfilComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    MyEventsComponent
   ],
   imports: [
     BrowserModule,

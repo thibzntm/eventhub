@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { AuthGuard } from './shared/services/auth.guard';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'create', component: CreateEventComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: UserProfilComponent }
+  { path: 'profile', component: UserProfilComponent },
+  { path: 'my-events', component: MyEventsComponent } 
   
 ];
 
