@@ -55,7 +55,8 @@
       "email": "test",
       "password": "test",
       "favorites": [
-        "a5f1"
+        "a5f1",
+        "3cb9"
       ],
       "mySubscriptions": [
         "3cb9"
@@ -71,8 +72,8 @@
     },
     {
       "id": "b924",
-      "name": "pap",
-      "email": "pap",
+      "name": "regis",
+      "email": "regis",
       "password": "pap",
       "favorites": [],
       "mySubscriptions": []
