@@ -1,12 +1,25 @@
 {
   "events": [
     {
-      "id": "2594",
+      "id": "3cb9",
       "title": "test",
-      "date": "2024-09-05",
-      "location": "test",
-      "description": "tes",
-      "owner": "test"
+      "date": "2024-09-04",
+      "location": "paris",
+      "description": "fsdf",
+      "creatorId": 1,
+      "owner": "thib@example.com",
+      "maxPeople": 50,
+      "counter": 1
+    },
+    {
+      "id": "0198",
+      "title": "test",
+      "date": "2024-09-13",
+      "location": "tes",
+      "description": "test",
+      "owner": "test",
+      "maxPeople": 10,
+      "counter": 0
     }
   ],
   "users": [

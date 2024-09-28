@@ -1,7 +1,7 @@
 // create-event.component.ts
 import { Component } from '@angular/core';
 import { EventService } from '../shared/services/event.service';
-import { AuthService } from '../shared/services/auth.service'; // Importer AuthService
+import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,11 +14,13 @@ export class CreateEventComponent {
   date: string = '';
   location: string = '';
   description: string = '';
-  owner: string = ''; // Ajouter le champ owner
+  owner: string = '';
+  maxPeople: number = 0; // Nouveau champ pour le maximum de personnes
+  counter: number = 0; // Initialisé à 0 pour le compteur de participants
 
   constructor(
     private eventService: EventService,
-    private authService: AuthService, // Injecter AuthService
+    private authService: AuthService,
     private router: Router
   ) {}
 
@@ -33,7 +35,7 @@ export class CreateEventComponent {
   }
 
   createEvent() {
-    if (!this.title || !this.date || !this.location || !this.description) {
+    if (!this.title || !this.date || !this.location || !this.description || !this.maxPeople) {
       console.error('All fields are required');
       return;
     }
@@ -43,13 +45,15 @@ export class CreateEventComponent {
       date: this.date,
       location: this.location,
       description: this.description,
-      owner: this.owner 
+      owner: this.owner,
+      maxPeople: this.maxPeople, // Ajout du nombre maximum de personnes
+      counter: this.counter // Initialisé à 0 par défaut
     };
 
     this.eventService.createEvent(newEvent).subscribe(
       (response) => {
         console.log('Event created successfully', response);
-        this.router.navigate(['/']); 
+        this.router.navigate(['/']); // Redirige vers la page d'accueil ou une autre page après la création
       },
       (error) => {
         console.error('Failed to create event', error);

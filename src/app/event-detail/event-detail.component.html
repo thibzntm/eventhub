@@ -1,13 +1,16 @@
 <app-menu></app-menu> <!-- Composant de menu -->
+<!-- event-detail.component.html -->
 <div class="event-detail-container" *ngIf="event">
-    <h2>{{ event.title }}</h2>
-    <p><strong>Date:</strong> {{ event.date }}</p>
-    <p><strong>Location:</strong> {{ event.location }}</p>
-    <p><strong>Description:</strong> {{ event.description }}</p>
-    <a routerLink="/" class="btn btn-back">Back to Events</a>
-  </div>
-  
-  <div *ngIf="!event">
-    <p>Loading event details...</p>
-  </div>
-  
+  <h2>{{ event.title }}</h2>
+  <p><strong>Date:</strong> {{ event.date }}</p>
+  <p><strong>Location:</strong> {{ event.location }}</p>
+  <p><strong>Description:</strong> {{ event.description }}</p>
+  <p><strong>Owner:</strong> {{ event.owner }}</p>
+  <p><strong>Max People:</strong> {{ event.maxPeople }}</p> 
+  <p><strong>Current Participants:</strong> {{ event.counter }}</p> 
+  <a routerLink="/" class="btn btn-back">Back to Events</a>
+</div>
+
+<div *ngIf="!event">
+  <p>Loading event details...</p>
+</div>
