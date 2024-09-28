@@ -1,3 +1,4 @@
+// register.component.ts
 import { Component } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
@@ -27,9 +28,8 @@ export class RegisterComponent {
         this.router.navigate(['/']);
       },
       (error) => {
-        console.error('Registration failed', error);
+        console.error('Registration failed', error.message); // Affiche le message d'erreur
       }
     );
   }
-  
 }

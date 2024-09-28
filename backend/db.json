@@ -7,6 +7,13 @@
       "location": "Paris",
       "description": "Une conférence dédiée à Angular.",
       "creatorId": 1
+    },
+    {
+      "id": "3cb9",
+      "title": "test",
+      "date": "2024-09-04",
+      "location": "paris ",
+      "description": "fsdf"
     }
   ],
   "users": [
@@ -15,6 +22,18 @@
       "name": "Thib",
       "email": "thib@example.com",
       "password": "password123"
+    },
+    {
+      "id": "051d",
+      "name": "sdf",
+      "email": "dsffd",
+      "password": "sfs"
+    },
+    {
+      "id": "f78c",
+      "name": "resqr",
+      "email": "test",
+      "password": "test"
     }
   ]
 }

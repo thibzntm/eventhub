@@ -1,8 +1,8 @@
 // auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map, mergeMap} from 'rxjs/operators';
+import { Observable, BehaviorSubject, throwError } from 'rxjs';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -13,28 +13,33 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  // Méthode de connexion
   login(credentials: { email: string; password: string }): Observable<any> {
     return this.http.get<any[]>(this.apiUrl).pipe(
-      map(users => users.find(user => user.email === credentials.email && user.password === credentials.password))
+      map(users => {
+        console.log('Fetched users:', users);
+        const user = users.find(user => user.email === credentials.email && user.password === credentials.password);
+        return user || null; // Retourne l'utilisateur trouvé ou null
+      })
     );
   }
-  
 
+  
+  // Méthode d'inscription
   register(userData: any): Observable<any> {
     return this.http.get<any[]>(`${this.apiUrl}?email=${userData.email}`).pipe(
       mergeMap((users: any[]) => {
         if (Array.isArray(users) && users.length > 0) {
-          throw new Error('User already exists');
+          // L'utilisateur existe déjà
+          return throwError(() => new Error('User already exists'));
         } else {
-          return this.http.post<any>(this.apiUrl, userData);  // Crée l'utilisateur si l'email n'existe pas
+          // Crée l'utilisateur si l'email n'existe pas
+          return this.http.post<any>(this.apiUrl, userData);
         }
-      })
+      }),
+      catchError(error => throwError(() => error))
     );
   }
-  
-  
-  
-  
 
   logout() {
     // Supprimer la session
