@@ -1,27 +1,12 @@
 {
   "events": [
     {
-      "id": "1",
-      "title": "Conférence Angular",
-      "date": "2024-09-28",
-      "location": "Paris",
-      "description": "Une conférence dédiée à Angular.",
-      "creatorId": 1
-    },
-    {
       "id": "2594",
       "title": "test",
       "date": "2024-09-05",
       "location": "test",
       "description": "tes",
       "owner": "test"
-    },
-    {
-      "id": "6250",
-      "title": "test",
-      "date": "2024-09-13",
-      "location": "test",
-      "description": "tes"
     }
   ],
   "users": [
