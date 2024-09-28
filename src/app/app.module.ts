@@ -16,6 +16,7 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MyEventsComponent } from './my-events/my-events.component';
     UserProfilComponent,
     MenuComponent,
     FooterComponent,
-    MyEventsComponent
+    MyEventsComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

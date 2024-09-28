@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { AuthGuard } from './shared/services/auth.guard';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,8 +19,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: UserProfilComponent },
-  { path: 'my-events', component: MyEventsComponent } 
-  
+  { path: 'my-events', component: MyEventsComponent },
+  { path: 'edit-event/:id', component: EditEventComponent } 
+
 ];
 
 @NgModule({

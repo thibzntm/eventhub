@@ -12,13 +12,13 @@
       "counter": 1
     },
     {
-      "id": "2447",
-      "title": "desfsdf",
-      "date": "2024-09-08",
-      "location": "dsfsdf",
-      "description": "dsfsdf",
+      "id": "ff38",
+      "title": "test",
+      "date": "2024-08-29",
+      "location": "tset",
+      "description": "tesgsert",
       "owner": "test",
-      "maxPeople": 5,
+      "maxPeople": 10,
       "counter": 0
     }
   ],
