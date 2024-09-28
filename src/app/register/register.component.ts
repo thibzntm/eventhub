@@ -21,7 +21,13 @@ export class RegisterComponent {
       return;
     }
   
-    const user = { name: this.name, email: this.email, password: this.password };
+    const user = { 
+      name: this.name, 
+      email: this.email, 
+      password: this.password,
+      favorites: [], // Initialiser avec une liste vide
+      mySubscriptions: [] // Initialiser avec une liste vide
+    };
     this.authService.register(user).subscribe(
       (response) => {
         this.authService.setSession(response);

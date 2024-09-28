@@ -12,13 +12,13 @@
       "counter": 1
     },
     {
-      "id": "ff38",
-      "title": "test",
-      "date": "2024-08-29",
-      "location": "tset",
-      "description": "tesgsert",
+      "id": "a5f1",
+      "title": "dfsgfdg",
+      "date": "2024-08-28",
+      "location": "gdgd",
+      "description": "gsdfdsfsd",
       "owner": "test",
-      "maxPeople": 10,
+      "maxPeople": 23,
       "counter": 0
     }
   ],
@@ -27,19 +27,33 @@
       "id": "1",
       "name": "Thib",
       "email": "thib@example.com",
-      "password": "password123"
+      "password": "password123",
+      "favorites": [],
+      "mySubscriptions": []
     },
     {
       "id": "051d",
       "name": "sdf",
-      "email": "dsffd",
-      "password": "sfs"
+      "email": "df",
+      "password": "df",
+      "favorites": [],
+      "mySubscriptions": []
     },
     {
       "id": "f78c",
       "name": "resqr",
       "email": "test",
-      "password": "test"
+      "password": "test",
+      "favorites": [],
+      "mySubscriptions": []
+    },
+    {
+      "id": "2542",
+      "name": "ss",
+      "email": "ss",
+      "password": "ss",
+      "favorites": [],
+      "mySubscriptions": []
     }
   ]
 }

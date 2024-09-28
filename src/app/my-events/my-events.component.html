@@ -1,5 +1,6 @@
 <app-menu></app-menu> <!-- Composant de menu -->
 
+<!-- my-events.component.html -->
 <div class="my-events-container">
     <h2>My Events</h2>
     <div *ngIf="events.length > 0; else noEvents">
@@ -9,7 +10,7 @@
         <p><strong>Location:</strong> {{ event.location }}</p>
         <p><strong>Participants:</strong> {{ event.counter }}/{{ event.maxPeople }}</p>
         <button (click)="deleteEvent(event.id)" class="btn btn-delete">Delete</button>
-        <button [routerLink]="['/edit-event', event.id]" class="btn btn-edit">Edit</button>
+        <button [routerLink]="['/edit-event', event.id]" class="btn btn-edit">Edit</button> <!-- Lien d'édition -->
       </div>
     </div>
     <ng-template #noEvents>

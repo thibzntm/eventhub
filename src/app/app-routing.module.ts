@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: UserProfilComponent },
   { path: 'my-events', component: MyEventsComponent },
-  { path: 'edit-event/:id', component: EditEventComponent } 
+  { path: 'edit-event/:id', component: EditEventComponent },
+  { path: '**', redirectTo: '' } 
 
 ];
 
