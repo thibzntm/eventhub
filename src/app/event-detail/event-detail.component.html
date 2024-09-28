@@ -1,13 +1,23 @@
-<app-menu></app-menu> <!-- Composant de menu -->
+
 <!-- event-detail.component.html -->
+<app-menu></app-menu>
 <div class="event-detail-container" *ngIf="event">
   <h2>{{ event.title }}</h2>
   <p><strong>Date:</strong> {{ event.date }}</p>
   <p><strong>Location:</strong> {{ event.location }}</p>
   <p><strong>Description:</strong> {{ event.description }}</p>
   <p><strong>Owner:</strong> {{ event.owner }}</p>
-  <p><strong>Max People:</strong> {{ event.maxPeople }}</p> 
-  <p><strong>Current Participants:</strong> {{ event.counter }}</p> 
+  <p><strong>Max People:</strong> {{ event.maxPeople }}</p>
+  <p><strong>Current Participants:</strong> {{ event.counter }}</p>
+  
+  <button (click)="toggleFavorite()" class="btn">
+    {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+  </button>
+
+  <button (click)="toggleSubscription()" class="btn">
+    {{ isSubscribed ? 'Unsubscribe' : 'Subscribe' }}
+  </button>
+
   <a routerLink="/" class="btn btn-back">Back to Events</a>
 </div>
 

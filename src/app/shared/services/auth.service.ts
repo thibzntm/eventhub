@@ -93,5 +93,58 @@ export class AuthService {
   // Observable pour savoir si l'utilisateur est connecté
   isUserLoggedIn(): Observable<boolean> {
     return this.isLoggedIn$;
+  }  
+  
+  updateCurrentUser(user: any): Observable<any> {
+    this.setSession(user);
+    return this.http.put(`${this.apiUrl}/${user.id}`, user);
+  }
+
+  addToFavorites(eventId: string): Observable<any> {
+    const user = this.getCurrentUser();
+    if (user && !user.favorites.includes(eventId)) {
+      user.favorites.push(eventId);
+      return this.updateCurrentUser(user);
+    }
+    return new Observable(observer => {
+      observer.next(user);
+      observer.complete();
+    });
+  }
+
+  removeFromFavorites(eventId: string): Observable<any> {
+    const user = this.getCurrentUser();
+    if (user && user.favorites.includes(eventId)) {
+      user.favorites = user.favorites.filter((id: string) => id !== eventId);
+      return this.updateCurrentUser(user);
+    }
+    return new Observable(observer => {
+      observer.next(user);
+      observer.complete();
+    });
+  }
+
+  subscribeToEvent(eventId: string): Observable<any> {
+    const user = this.getCurrentUser();
+    if (user && !user.mySubscriptions.includes(eventId)) {
+      user.mySubscriptions.push(eventId);
+      return this.updateCurrentUser(user);
+    }
+    return new Observable(observer => {
+      observer.next(user);
+      observer.complete();
+    });
+  }
+
+  unsubscribeFromEvent(eventId: string): Observable<any> {
+    const user = this.getCurrentUser();
+    if (user && user.mySubscriptions.includes(eventId)) {
+      user.mySubscriptions = user.mySubscriptions.filter((id: string) => id !== eventId);
+      return this.updateCurrentUser(user);
+    }
+    return new Observable(observer => {
+      observer.next(user);
+      observer.complete();
+    });
   }
 }

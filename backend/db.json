@@ -44,8 +44,12 @@
       "name": "resqr",
       "email": "test",
       "password": "test",
-      "favorites": [],
-      "mySubscriptions": []
+      "favorites": [
+        "a5f1"
+      ],
+      "mySubscriptions": [
+        "3cb9"
+      ]
     },
     {
       "id": "2542",
