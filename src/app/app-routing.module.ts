@@ -7,6 +7,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
+import { AuthGuard } from './shared/services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: UserProfilComponent }
+  
 ];
 
 @NgModule({

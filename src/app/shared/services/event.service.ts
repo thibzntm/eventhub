@@ -15,9 +15,11 @@ export class EventService {
     return this.http.get(this.apiUrl);
   }
 
-  getEventById(id: number): Observable<any> {
+  // event.service.ts
+  getEventById(id: string): Observable<any> { // Changez `id: number` en `id: string`
     return this.http.get(`${this.apiUrl}/${id}`);
   }
+
 
   createEvent(event: any): Observable<any> {
     return this.http.post(this.apiUrl, event);
