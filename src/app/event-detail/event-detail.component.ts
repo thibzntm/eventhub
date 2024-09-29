@@ -14,6 +14,7 @@ export class EventDetailComponent implements OnInit {
   user: any;
   isFavorite: boolean = false;
   isSubscribed: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +28,10 @@ export class EventDetailComponent implements OnInit {
     if (eventId) {
       this.getEventDetails(eventId);
     }
+
+    this.authService.isUserLoggedIn().subscribe((loggedIn: boolean) => {
+      this.isLoggedIn = loggedIn;
+    });
   }
 
   getEventDetails(id: string): void {

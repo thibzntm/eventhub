@@ -1,12 +1,12 @@
 <app-menu></app-menu> <!-- Composant de menu -->
 
 <div class="auth-card">
-  <h2>Register</h2>
+  <h2>Page d'inscription</h2>
   <form (submit)="registerUser()">
-    <input type="text" [(ngModel)]="name" name="name" placeholder="Name" required />
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Prénom" required />
     <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
-    <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
-    <button type="submit">Register</button>
+    <input type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe" required />
+    <button type="submit">S'inscrire</button>
   </form>
-  <a href="/login">Already have an account? Login</a>
+  <a href="/login">Déjà un compte ? Se connecter</a>
 </div>

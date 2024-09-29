@@ -2,14 +2,14 @@
   "events": [
     {
       "id": "3cb9",
-      "title": "test",
+      "title": "testtt",
       "date": "2024-09-04",
-      "location": "paris",
+      "location": "ssparis",
       "description": "fsdf",
       "creatorId": 1,
       "owner": "thib@example.com",
       "maxPeople": 50,
-      "counter": 1
+      "counter": 2
     },
     {
       "id": "a5f1",
@@ -35,11 +35,15 @@
   "users": [
     {
       "id": "1",
-      "name": "Thib",
+      "name": "Thibzz",
       "email": "thib@example.com",
       "password": "password123",
-      "favorites": [],
-      "mySubscriptions": []
+      "favorites": [
+        "3cb9"
+      ],
+      "mySubscriptions": [
+        "3cb9"
+      ]
     },
     {
       "id": "051d",

@@ -30,7 +30,7 @@
   .auth-card button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #28a745;
     border: none;
     border-radius: 5px;
     color: white;
@@ -40,7 +40,7 @@
   }
   
   .auth-card button:hover {
-    background-color: #0056b3;
+    background-color: #218838;
   }
   
   /* Link */
@@ -48,7 +48,7 @@
     display: block;
     text-align: center;
     margin-top: 15px;
-    color: #28a745;
+    color: #007bff;
     text-decoration: none;
   }
   

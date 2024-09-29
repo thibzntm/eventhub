@@ -2,19 +2,19 @@
 
 <!-- my-events.component.html -->
 <div class="my-events-container">
-    <h2>My Events</h2>
+    <h2>Mes évènements</h2>
     <div *ngIf="events.length > 0; else noEvents">
       <div *ngFor="let event of events" class="event-card">
         <h3>{{ event.title }}</h3>
-        <p><strong>Date:</strong> {{ event.date }}</p>
-        <p><strong>Location:</strong> {{ event.location }}</p>
-        <p><strong>Participants:</strong> {{ event.counter }}/{{ event.maxPeople }}</p>
-        <button (click)="deleteEvent(event.id)" class="btn btn-delete">Delete</button>
-        <button [routerLink]="['/edit-event', event.id]" class="btn btn-edit">Edit</button> <!-- Lien d'édition -->
+        <p><strong>Date :</strong> {{ event.date }}</p>
+        <p><strong>Lieu :</strong> {{ event.location }}</p>
+        <p><strong>Participants :</strong> {{ event.counter }}/{{ event.maxPeople }}</p>
+        <button (click)="deleteEvent(event.id)" class="btn btn-delete">Supprimer</button>
+        <button [routerLink]="['/edit-event', event.id]" class="btn btn-edit">Modifier</button> <!-- Lien d'édition -->
       </div>
     </div>
     <ng-template #noEvents>
-      <p>You have not created any events yet.</p>
+      <p>Tu n'as pas encore créé d'évènements.</p>
     </ng-template>
   </div>
   

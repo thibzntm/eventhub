@@ -2,34 +2,34 @@
 <!-- create-event.component.html -->
 <div class="create-event-container">
   <div class="event-card">
-    <h2>Create New Event</h2>
+    <h2>Création d'un évènement</h2>
     <form (ngSubmit)="createEvent()">
       <div class="form-group">
-        <label for="title">Event Title</label>
+        <label for="title">Nom de l'évènement</label>
         <input type="text" id="title" [(ngModel)]="title" name="title" placeholder="Enter event title" required />
       </div>
 
       <div class="form-group">
-        <label for="date">Event Date</label>
+        <label for="date">Date</label>
         <input type="date" id="date" [(ngModel)]="date" name="date" required />
       </div>
 
       <div class="form-group">
-        <label for="location">Event Location</label>
+        <label for="location">Lieu</label>
         <input type="text" id="location" [(ngModel)]="location" name="location" placeholder="Enter event location" required />
       </div>
 
       <div class="form-group">
-        <label for="description">Event Description</label>
+        <label for="description">Description</label>
         <textarea id="description" [(ngModel)]="description" name="description" placeholder="Enter event description" rows="4" required></textarea>
       </div>
 
       <div class="form-group">
-        <label for="maxPeople">Max Number of People</label> <!-- Champ pour le nombre maximum de personnes -->
+        <label for="maxPeople">Nombre de places maximum</label> <!-- Champ pour le nombre maximum de personnes -->
         <input type="number" id="maxPeople" [(ngModel)]="maxPeople" name="maxPeople" placeholder="Enter max number of people" required />
       </div>
 
-      <button type="submit" class="btn">Create Event</button>
+      <button type="submit" class="btn">Créer l'évènement</button>
     </form>
   </div>
 </div>
